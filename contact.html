@@ -4,7 +4,160 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>contact</title>
+    <title>Contact</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/contact.css" />
+    <script
+      src="https://kit.fontawesome.com/4dd95a71c6.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
-  <body></body>
+  <body>
+    <nav>
+      <div class="container navContainer">
+        <a href="./index.html"><h4>Giusha</h4></a>
+        <ul class="navMenu">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./course.html">Course</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+        <button id="opneMenyBtn">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <button id="closeMenyBtn">
+          <i class="fa-solid fa-x"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ===== end of navbar ======= -->
+
+    <section class="contact">
+      <div class="container contactContainer">
+        <aside class="contactAside">
+          <div class="asideImg">
+            <img src="./images/contact.svg" alt="" />
+          </div>
+          <h2>Contact Us</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
+            dolorum aliquam dicta.
+          </p>
+          <ul class="contactDetails">
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <h5>+12 (34) 37 0 123</h5>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <h5>Giorgi@gmail.com</h5>
+            </li>
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <h5>Accra, Ghana</h5>
+            </li>
+          </ul>
+          <ul class="ContactIcons">
+            <li>
+              <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            </li>
+          </ul>
+        </aside>
+
+        <form
+          action="https://formspree.io/f/mqkjoynd"
+          method="POST"
+          class="contactForm"
+        >
+          <div class="formName">
+            <input
+              type="text"
+              name="Firts Name"
+              placeholder="Enter your name"
+              required
+            />
+            <input
+              type="text"
+              name="Last Name"
+              placeholder="Enter your last name"
+              required
+            />
+          </div>
+          <input
+            type="email"
+            name="Email Addres"
+            placeholder="Enter Your Email addres"
+            required
+          />
+          <textarea name="Massige" rows="7" placeholder="Massige"></textarea>
+          <button type="submit" class="btn btn-primary">Send massige</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container footerContainer">
+        <div class="footer1">
+          <a href="./index.html" class="footerLogo">Giorgi</a>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus,
+            aliquid.
+          </p>
+        </div>
+        <div class="footer2">
+          <h4>Permialinks</h4>
+          <ul class="permalinks">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./course.html">Course</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer3">
+          <h4>Privacy</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Tearms and conditions</a></li>
+            <li><a href="#">Refund Poilicy</a></li>
+          </ul>
+        </div>
+        <div class="footer4">
+          <h4>Contact Us</h4>
+          <div>
+            <p>+12 (34) 37 0 123</p>
+            <p>Giorgi@gmail.com</p>
+          </div>
+          <ul class="socialIcons">
+            <li>
+              <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footerCopyright">
+        <small>Copyright &copy; Giorgi</small>
+      </div>
+    </footer>
+
+    <script src="./main.js"></script>
+  </body>
 </html>

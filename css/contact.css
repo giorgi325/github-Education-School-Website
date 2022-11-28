@@ -1,0 +1,125 @@
+.contactContainer {
+    background: var(--color-bg1);
+    padding: 4rem;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 4rem;
+    height: 30rem;
+    margin: 7rem auto;
+    border-radius: 1rem;
+}
+
+.contactAside {
+    background: var(--color-primary);
+    padding: 3rem;
+    border-radius: 1rem;
+    position: relative;
+    bottom: 10rem;
+}
+
+.asideImg {
+    width: 12rem;
+    margin-bottom: 2rem;
+}
+
+.contactAside h2 {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.contactAside p {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+.contactDetails li  {
+    display: flex;
+    gap: 1rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.ContactIcons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 3rem;
+}
+
+.ContactIcons a {
+    background: var(--color-bg2);
+    padding: 0.5rem;
+    border-radius: 50%;
+    border-radius: 0.9rem;
+    transition: var(--trasition);
+}
+
+.ContactIcons a:hover {
+    padding: 1rem;
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-right: 4rem;
+}
+
+.formName {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.contactForm input[type="text"] {
+    width: 50%;
+}
+
+.contactForm input, textarea {
+    width: 100%;
+    padding: 1rem;
+    background: var( --color-bg);
+    color: var(--color-white);
+} 
+
+.contactForm button {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+
+    .contactContainer {
+        gap: 1.5rem;
+        margin-top: 3rem;
+        height: auto ;
+        padding: 1.5rem;
+    }
+
+    .contactAside {
+        width: auto;
+        padding: 1.5rem;
+        bottom: 0;
+    }
+
+    .contactForm {
+        align-self: center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .contactContainer {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        margin-top: 0;
+    }
+
+    .contactForm {
+        margin: 0 1.5rem 3rem;
+    }
+
+    .formName {
+        flex-direction: column;
+    }
+
+    .contactForm input[type="text"] {
+        width: 100%;
+    }
+}
