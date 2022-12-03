@@ -1,0 +1,106 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+  
+header {
+  width: 100%;
+}
+  
+header nav .navbar-collapse {
+  justify-content: flex-end;
+}
+ 
+main {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 10px;
+  place-items: center;
+  margin-top: 200px;
+}
+  
+main section {
+  margin-top: 50px;
+  padding: 25px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 15px;
+  place-items: center;
+  background: var(--color-bg1);
+}
+  
+main section .top {
+  border-bottom: 1px solid black;
+  padding-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+}
+  
+main section .bottom {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 10px;
+}
+  
+main section .bottom button {
+  width: 100%;
+}
+  
+main section .top span {
+  cursor: pointer;
+  font-weight: 500;
+}
+  
+main section .bottom .actionToggle {
+  display: block;
+}
+
+main section .bottom .actionToggle input {
+  width: 90%;
+  height: 30px;
+  background: var(--color-bg1);
+  color: white;
+}
+  
+main section .top,
+main section .bottom button,
+main section .bottom label,
+main section .bottom input::placeholder {
+  user-select: none;
+}
+
+.liner {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.liner input {
+  width: 90%;
+  height: 30px;
+  background: var(--color-bg1);
+  color: white;
+}
+
+.liner2 {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 5px;
+}
+
+.liner2 input {
+  width: 90%;
+  height: 30px;
+  background: var(--color-bg1);
+  color: white;
+}
+
+.liner span input {
+  width: 90%;
+  height: 30px;
+  background: var(--color-bg1);
+  color: white;
+}

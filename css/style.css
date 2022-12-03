@@ -495,6 +495,16 @@ footer ul li a:hover {
         animation-delay: 0.6s;
         transform-origin: top left;
     }
+
+    .navMenu li:nth-child(5) {
+        animation-delay: 0.8s;
+        transform-origin: top left;
+    }
+
+    .navMenu li:nth-child(6) {
+        animation-delay: 1s;
+        transform-origin: top left;
+    }
     
     @keyframes animateNavItem {
         0% {
