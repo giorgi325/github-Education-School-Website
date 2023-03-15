@@ -9,8 +9,6 @@ const firebaseConfig = {
   measurementId: "G-36F3HXJMFF",
 };
 
-firebase.initializeApp(firebaseConfig);
-
 function generateFirebaseItem(ID, value) {
   return {
     id: ID,
@@ -30,6 +28,16 @@ function addElementInFirebase(REF, data) {
   firebase.database().ref(`${REF}/${randomID()}`).set(data);
 }
 
+firebase.initializeApp(firebaseConfig);
+
+function randomID() {
+  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
+    let r = (Math.random() * 16) | 0;
+    let v = c == "x" ? r : (r & 0x3) | 0x8;
+    return v.toString(16);
+  });
+}
+
 function getRefFromFirebase(REF) {
   let tempArray = [];
   firebase
@@ -37,6 +45,8 @@ function getRefFromFirebase(REF) {
     .ref(REF)
     .on("value", (response) => {
       response.forEach((element) => {
+    .on("value", (respons) => {
+      respons.forEach((element) => {
         tempArray.push(generateFirebaseItem(element.key, element.val()));
       });
     });
@@ -44,7 +54,11 @@ function getRefFromFirebase(REF) {
 }
 
 function getElementFromFirebase(REF, id) {
+<<<<<<< HEAD
   const array = getRefFromFirebase(REF);
+=======
+  const array = getArrayFrmFirebase(REF);
+>>>>>>> 4756d1a47848da98825149f77baa6cec2e78c6c5
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       array.forEach((element) => {
@@ -56,6 +70,7 @@ function getElementFromFirebase(REF, id) {
     }, 1000);
   });
 }
+<<<<<<< HEAD
 
 function updateDayaInFirebase(REF, id, data) {
   firebase.database().ref(`${REF}/${id}`).set(data);
@@ -68,3 +83,5 @@ function removeElementFromFirebase(REF, id) {
 function removeRefFromFirebase(REF) {
   firebase.database().ref(REF).remove();
 }
+=======
+>>>>>>> 4756d1a47848da98825149f77baa6cec2e78c6c5

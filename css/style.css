@@ -35,7 +35,7 @@ body {
     line-height: 1.7;
     color: var(--color-white);
     background: var(--color-bg);
-    background-image: url(/images/bg-texture.png);
+    background-image: url(../images/bg-texture.png);
 }
 
 .container {
@@ -52,7 +52,11 @@ section h2 {
     margin-bottom: 4rem;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
     line-height: 1.2;
 }
 
@@ -223,7 +227,7 @@ header {
 }
 
 .category:nth-child(3) .catecogy-icon {
-    background: var( --color-succses);
+    background: var(--color-succses);
 }
 
 .category:nth-child(3) .catecogy-icon {
@@ -231,7 +235,7 @@ header {
 }
 
 .category:nth-child(4) .catecogy-icon {
-    background: var( --olor-warning);
+    background: var(--olor-warning);
 }
 
 .category:nth-child(5) .catecogy-icon {
@@ -359,7 +363,7 @@ header {
 .testimonial-body::before {
     content: "";
     display: block;
-    background: linear-gradient(135deg,transparent, var(--color-primary), var(--color-primary));
+    background: linear-gradient(135deg, transparent, var(--color-primary), var(--color-primary));
     width: 3rem;
     height: 3rem;
     position: absolute;
@@ -382,7 +386,7 @@ footer {
     gap: 5rem;
 }
 
-.footerContainer > div h4 {
+.footerContainer>div h4 {
     margin-bottom: 1.2rem;
 }
 
@@ -458,7 +462,7 @@ footer ul li a:hover {
         flex-direction: column;
         gap: 0;
         display: none;
-        transition: var( --trasition);
+        transition: var(--trasition);
     }
 
     .navMenu li {
@@ -506,7 +510,7 @@ footer ul li a:hover {
         animation-delay: 1s;
         transform-origin: top left;
     }
-    
+
     @keyframes animateNavItem {
         0% {
             transform: rotateZ(-90deg) rotateX(90deg) scale(0.1);
