@@ -9,14 +9,50 @@ const firebaseConfig = {
   measurementId: "G-36F3HXJMFF",
 };
 
-firebase.initializeApp(firebaseConfig);
-
 function generateFirebaseItem(ID, value) {
   return {
     id: ID,
     data: value,
   };
 }
+
 function addElementInFirebase(REF, data) {
   firebase.database().ref(`${REF}/${randomID()}`).set(data);
+}
+
+firebase.initializeApp(firebaseConfig);
+
+function randomID() {
+  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
+    let r = (Math.random() * 16) | 0;
+    let v = c == "x" ? r : (r & 0x3) | 0x8;
+    return v.toString(16);
+  });
+}
+
+function getRefFromFirebase(REF) {
+  let tempArray = [];
+  firebase
+    .database()
+    .ref(REF)
+    .on("value", (respons) => {
+      respons.forEach((element) => {
+        tempArray.push(generateFirebaseItem(element.key, element.val()));
+      });
+    });
+  return tempArray;
+}
+
+function getElementFromFirebase(REF, id) {
+  const array = getArrayFrmFirebase(REF);
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      array.forEach((element) => {
+        if (element.id === id) {
+          resolve(element);
+        }
+      });
+      reject("404");
+    }, 1000);
+  });
 }
