@@ -43,8 +43,6 @@ function getRefFromFirebase(REF) {
   firebase
     .database()
     .ref(REF)
-    .on("value", (response) => {
-      response.forEach((element) => {
     .on("value", (respons) => {
       respons.forEach((element) => {
         tempArray.push(generateFirebaseItem(element.key, element.val()));
@@ -54,11 +52,7 @@ function getRefFromFirebase(REF) {
 }
 
 function getElementFromFirebase(REF, id) {
-<<<<<<< HEAD
   const array = getRefFromFirebase(REF);
-=======
-  const array = getArrayFrmFirebase(REF);
->>>>>>> 4756d1a47848da98825149f77baa6cec2e78c6c5
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       array.forEach((element) => {
@@ -70,7 +64,6 @@ function getElementFromFirebase(REF, id) {
     }, 1000);
   });
 }
-<<<<<<< HEAD
 
 function updateDayaInFirebase(REF, id, data) {
   firebase.database().ref(`${REF}/${id}`).set(data);
@@ -83,5 +76,3 @@ function removeElementFromFirebase(REF, id) {
 function removeRefFromFirebase(REF) {
   firebase.database().ref(REF).remove();
 }
-=======
->>>>>>> 4756d1a47848da98825149f77baa6cec2e78c6c5
