@@ -17,6 +17,54 @@ function generateFirebaseItem(ID, value) {
     data: value,
   };
 }
+
+function randomID() {
+  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
+    let r = (Math.random() * 16) | 0;
+    let v = c == "x" ? r : (r & 0x3) | 0x8;
+    return v.toString(16);
+  });
+}
+
 function addElementInFirebase(REF, data) {
   firebase.database().ref(`${REF}/${randomID()}`).set(data);
+}
+
+function getRefFromFirebase(REF) {
+  let tempArray = [];
+  firebase
+    .database()
+    .ref(REF)
+    .on("value", (response) => {
+      response.forEach((element) => {
+        tempArray.push(generateFirebaseItem(element.key, element.val()));
+      });
+    });
+  return tempArray;
+}
+
+function getElementFromFirebase(REF, id) {
+  const array = getRefFromFirebase(REF);
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      array.forEach((element) => {
+        if (element.id === id) {
+          resolve(element);
+        }
+      });
+      reject("404");
+    }, 1000);
+  });
+}
+
+function updateDayaInFirebase(REF, id, data) {
+  firebase.database().ref(`${REF}/${id}`).set(data);
+}
+
+function removeElementFromFirebase(REF, id) {
+  firebase.database().ref(`${REF}/${id}`).remove();
+}
+
+function removeRefFromFirebase(REF) {
+  firebase.database().ref(REF).remove();
 }

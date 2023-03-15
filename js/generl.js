@@ -16,3 +16,5 @@ function displayToast(title, icon, color, time = 1500) {
   });
   toast.fire({ title, icon });
 }
+
+
